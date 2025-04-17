@@ -1,0 +1,105 @@
+.about-creative {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8cdda, #1d2b64);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  
+    .background-shapes {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+  
+      .shape {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.2;
+        filter: blur(60px);
+      }
+  
+      .shape1 {
+        width: 300px;
+        height: 300px;
+        background: #ff6ec4;
+        top: 10%;
+        left: 5%;
+      }
+  
+      .shape2 {
+        width: 250px;
+        height: 250px;
+        background: #5ee7df;
+        bottom: 20%;
+        right: 10%;
+      }
+  
+      .shape3 {
+        width: 200px;
+        height: 200px;
+        background: #fddb92;
+        top: 50%;
+        right: 30%;
+      }
+    }
+  
+    .about-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+      max-width: 700px;
+  
+      .profile-pic img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        margin-bottom: 1rem;
+      }
+  
+      h1 {
+        font-size: 2.8rem;
+        margin: 0.5rem 0;
+  
+        span {
+          color: #ffd700;
+        }
+      }
+  
+      .tagline {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        font-weight: 300;
+      }
+  
+      .description {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        color: #f0f0f0;
+      }
+  
+      .btn-glow {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        background: linear-gradient(135deg, #ff416c, #ff4b2b);
+        border: none;
+        border-radius: 50px;
+        color: white;
+        text-decoration: none;
+        box-shadow: 0 0 15px rgba(255, 65, 108, 0.5);
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+  
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 25px rgba(255, 65, 108, 0.7);
+        }
+      }
+    }
+  }
+  
