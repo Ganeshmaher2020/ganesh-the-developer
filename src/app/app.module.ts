@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { AboutComponent } from './Components/about/about.component';
 import { ContactFormComponent } from './Components/contact-form/contact-form.component';
+import { SpecializationComponent } from './Components/specialization/specialization.component';
+import { JourneyComponent } from './Components/journey/journey.component';
+import { WorksComponent } from './Components/works/works.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AboutComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    SpecializationComponent,
+    JourneyComponent,
+    WorksComponent
   ],
   imports: [
     BrowserModule,
