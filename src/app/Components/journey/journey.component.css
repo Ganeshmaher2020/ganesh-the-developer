@@ -1,148 +1,166 @@
-.journey-container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 60px 20px;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #f8cdda, #1d2b64);
-  color: #fff;
-  font-family: 'Segoe UI', sans-serif;
-  position: relative;
+.journey-wrapper {
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #b88d9e, #87abd3, #c7d266);
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .journey-title {
-  text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 60px;
-  color: #ffd700;
-  letter-spacing: 1px;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    color: hsl(216, 93%, 48%); /* Dark blue-gray for a more professional tone */
+    position: relative;
+    text-shadow: 2px 2px 6px rgba(46, 59, 78, 0.3); /* Slightly darker shadow */
+}
+
+.road-path {
+    height: 6px;
+    background: linear-gradient(90deg, #0b0bf1, #1410cb, #1616c2); /* Warm, sunset-inspired colors */
+    margin: 0 auto 3rem;
+    width: 85%;
+    border-radius: 20px;
+    box-shadow: 0 0 12px rgba(255, 87, 34, 0.3); /* Warm shadow matching the road */
 }
 
 .timeline {
-  position: relative;
-  padding-left: 0;
-  margin: 0;
+    position: relative;
+    padding: 2rem 0;
+    max-width: 1000px;
+    margin: auto;
 }
 
 .timeline::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(135deg, #f8cdda, #1d2b64);
-  transform: translateX(-50%);
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(to bottom, #857b43, #4992e7, #dee980); /* Matching gradient for consistency */
+    transform: translateX(-50%);
+    border-radius: 5px;
+    z-index: 0;
 }
 
 .timeline-block {
-  position: relative;
-  width: 50%;
-  padding: 20px 40px;
-  box-sizing: border-box;
+    position: relative;
+    width: 50%;
+    padding: 2rem;
+    box-sizing: border-box;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+}
+
+.timeline-block:nth-child(even) {
+    animation-delay: 0.2s;
+}
+.timeline-block:nth-child(odd) {
+    animation-delay: 0.4s;
 }
 
 .timeline-block.left {
-  left: 0;
-  text-align: right;
+    left: 0;
+    text-align: right;
 }
 
 .timeline-block.right {
-  left: 50%;
-  text-align: left;
+    left: 50%;
+    text-align: left;
 }
 
 .timeline-content {
-    background: linear-gradient(135deg, #f8cdda, #1d2b64);
-  padding: 20px;
-  border-radius: 20px;
-  position: relative;
-  color: white;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 0.6s ease-in-out both;
-  backdrop-filter: blur(10px);
+    background: white;
+    padding: 1.75rem;
+    border-radius: 25px;
+    box-shadow: 0 6px 25px rgba(255, 87, 34, 0.3);
+    position: relative;
+    transition: all 0.3s ease;
+    border-left: 6px solid #3637a8; /* Orange accent for a pop of color */
+    border-right: 6px solid #3637a8;
 }
 
-/* Adjust spacing to prevent overlap */
-.timeline-block.left .timeline-content {
-  margin-right: 40px;
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(255, 87, 34, 0.4);
 }
 
-.timeline-block.right .timeline-content {
-  margin-left: 40px;
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(45deg, #ff8a65, #f4511e); /* Accent circle to match the road path */
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 0 0 5px rgba(255, 87, 34, 0.4);
+    z-index: 2;
 }
 
-.timeline-content::after {
-  content: "";
-  position: absolute;
-  top: 20px;
-  width: 16px;
-  height: 16px;
-  background: #ffd700;
-  border-radius: 50%;
-  border: 3px solid white;
-  z-index: 5;
+.timeline-block.left .timeline-content::before {
+    right: -11px;
 }
 
-.timeline-block.left .timeline-content::after {
-  right: -28px;
-}
-
-.timeline-block.right .timeline-content::after {
-  left: -28px;
+.timeline-block.right .timeline-content::before {
+    left: -11px;
 }
 
 .timeline-content h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 5px;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+    color: #3070cf; /* Dark blue-gray for headings */
+    font-weight: 600;
 }
 
 .timeline-content .org {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #f3f3f3;
-  margin-bottom: 4px;
+    font-weight: 700;
+    color: #4c6da4; /* Bold deep blue for organization names */
+    font-size: 1.1rem;
+}
+
+.timeline-content .field {
+    font-style: italic;
+    color: #f4511e; /* Accent color for fields */
+    margin: 6px 0;
 }
 
 .timeline-content .date {
-  font-size: 0.95rem;
-  color: #ddd;
+    font-size: 0.9rem;
+    color: #7f8c8d; /* Muted gray for date */
+    margin-top: 0.5rem;
 }
 
-/* Animation */
-@keyframes fadeIn {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Responsive Design */
+/* Responsive */
 @media screen and (max-width: 768px) {
-  .timeline::before {
-    left: 16px;
-  }
+    .timeline::before {
+        left: 10px;
+    }
 
-  .timeline-block,
-  .timeline-block.left,
-  .timeline-block.right {
-    width: 100%;
-    padding-left: 40px;
-    padding-right: 10px;
-    text-align: left;
-    left: 0;
-  }
+    .timeline-block {
+        width: 100%;
+        padding-left: 2.5rem;
+        text-align: left !important;
+    }
 
-  .timeline-content {
-    margin: 0 !important;
-  }
+    .timeline-block.left,
+    .timeline-block.right {
+        left: 0;
+    }
 
-  .timeline-content::after {
-    left: -12px !important;
-  }
+    .timeline-content::before {
+        left: -32px !important;
+    }
 }

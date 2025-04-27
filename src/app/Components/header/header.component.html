@@ -1,8 +1,18 @@
 <header class="header">
-    <div class="container">
+    <div class="header-inner">
+      <!-- Logo -->
       <div class="logo">
-        <h1>PortPholio</h1>
+        <h1><span class="text-white">Port</span><span class="text-primary">Pholio</span></h1>
       </div>
+  
+      <!-- Hamburger Icon -->
+      <button class="hamburger" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+  
+      <!-- Desktop Navigation -->
       <nav class="nav">
         <ul>
           <li><a routerLink="/about">Welcome</a></li>
@@ -10,6 +20,17 @@
           <li><a routerLink="/journey">Journey</a></li>
           <li><a routerLink="/work">Works</a></li>
           <li><a routerLink="/contact">Contact</a></li>
+        </ul>
+      </nav>
+  
+      <!-- Mobile Navigation -->
+      <nav *ngIf="isMenuOpen" class="mobile-nav">
+        <ul>
+          <li><a routerLink="/about" (click)="toggleMenu()">Welcome</a></li>
+          <li><a routerLink="/specialization" (click)="toggleMenu()">Specializations</a></li>
+          <li><a routerLink="/journey" (click)="toggleMenu()">Journey</a></li>
+          <li><a routerLink="/work" (click)="toggleMenu()">Works</a></li>
+          <li><a routerLink="/contact" (click)="toggleMenu()">Contact</a></li>
         </ul>
       </nav>
     </div>

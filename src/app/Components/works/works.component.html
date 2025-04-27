@@ -1,1 +1,32 @@
-<p>works works!</p>
+<!-- work.component.html -->
+<div class="container py-5">
+    <h2 class="text-center mb-5">Work Experience</h2>
+  
+    <div class="row g-4">
+      <div *ngFor="let work of workExperiences; let i = index" class="col-12">
+        <div class="row align-items-center" [ngClass]="{'flex-row-reverse': i % 2 !== 0}">
+          
+          <div class="col-md-6">
+            <div class="card work-card shadow animate__animated animate__fadeInUp">
+              <div class="card-body">
+                <h5 class="card-title">{{ work.position }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ work.company }}</h6>
+                <p class="card-text"><small class="text-muted">{{ work.duration }} | {{ work.location }}</small></p>
+                <ul>
+                  <li *ngFor="let point of work.description">{{ point }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-6 text-center">
+            <div class="timeline-icon bg-primary text-white d-inline-flex align-items-center justify-content-center rounded-circle shadow">
+              {{ i + 1 }}
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  

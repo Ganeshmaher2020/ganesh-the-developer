@@ -1,17 +1,9 @@
-body {
-    background: linear-gradient(135deg, #f8cdda, #1d2b64);
-    min-height: 100vh;
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    color: white;
+html, body {
+    overflow-x: hidden;
   }
   
-  a {
-    color: #ffd700; /* Adjust link color */
+
+  .no-scroll {
+    overflow: hidden;
+    height: 100%;
   }
-  
-  button {
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    color: white;
-  }
-  
